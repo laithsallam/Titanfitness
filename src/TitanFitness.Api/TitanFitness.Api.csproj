@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>TitanFitness.Api</RootNamespace>
+    <UserSecretsId>titanfitness-api</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <!-- The EF Core CLI tools (dotnet ef migrations add/update) require this
+         package to be visible from the startup project, not just from
+         Infrastructure where the DbContext actually lives. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TitanFitness.Infrastructure\TitanFitness.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
